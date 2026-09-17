@@ -1,5 +1,14 @@
 local M = {}
 
+M.general = {
+  t = {
+    ["<C-h>"] = { "<C-\\><C-n><C-w>h", "Window left" },
+    ["<C-l>"] = { "<C-\\><C-n><C-w>l", "Window right" },
+    ["<C-j>"] = { "<C-\\><C-n><C-w>j", "Window down" },
+    ["<C-k>"] = { "<C-\\><C-n><C-w>k", "Window up" },
+  },
+}
+
 M.gopher = {
   plugin = true,
   n = {

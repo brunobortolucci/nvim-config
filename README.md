@@ -115,6 +115,22 @@ Além dos plugins padrão do NvChad (Telescope, NvimTree, nvim-cmp, Treesitter, 
 | `rcarriga/nvim-dap-ui` | Interface visual para o debug (DAP) |
 | `nvim-neotest/nvim-nio` | Dependência assíncrona do DAP UI |
 | `coder/claudecode.nvim` | Integração com o Claude Code dentro do Neovim |
+| `sphamba/smear-cursor.nvim` | Anima o cursor com um efeito de "rastro" ao se mover |
+
+### `smear-cursor.nvim`
+
+Carregado com `lazy = false` (precisa iniciar junto com o Neovim, sem gatilho de `event`/`cmd`/`ft`). Opções aplicadas em `lua/custom/plugins.lua`:
+
+| Opção | Valor | Padrão do plugin | Efeito |
+|---|---|---|---|
+| `stiffness` | `0.8` | `0.6` | Rastro mais rígido/rápido ao acompanhar o cursor |
+| `trailing_stiffness` | `0.5` | `0.45` | Cauda do rastro um pouco mais "puxada" |
+| `distance_stop_animating` | `0.5` | `0.1` | Para de animar mais cedo (ignora micro-movimentos) |
+| `hide_target_hack` | `false` | — | Mantém o cursor real visível durante a animação |
+| `smear_between_buffers` | `true` | `true` | Anima também ao trocar de buffer/janela |
+| `smear_insert_mode` | `true` | `true` | Anima também no modo de inserção |
+
+Demais opções disponíveis (não alteradas, usando o padrão do plugin): `smear_between_neighbor_lines`, `scroll_buffer_space`, `legacy_computing_symbols_support`, `stiffness_insert_mode`, `trailing_stiffness_insert_mode`, `damping`, `damping_insert_mode`, `time_interval`, `cursor_color`, `transparent_bg_fallback_color`. Veja a [documentação oficial](https://github.com/sphamba/smear-cursor.nvim) para a lista completa.
 
 ## LSP e ferramentas instaladas via Mason
 

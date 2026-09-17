@@ -69,6 +69,7 @@ local default_plugins = {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "master",
     event = { "BufReadPost", "BufNewFile" },
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
     build = ":TSUpdate",
@@ -118,7 +119,7 @@ local default_plugins = {
 
   {
     "neovim/nvim-lspconfig",
-    event = "User FilePost",
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       require "plugins.configs.lspconfig"
     end,
